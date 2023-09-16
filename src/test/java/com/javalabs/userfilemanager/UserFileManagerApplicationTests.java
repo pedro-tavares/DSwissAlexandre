@@ -12,7 +12,7 @@ import org.springframework.core.annotation.Order;
  * 
  */
 @SpringBootTest
-class EmployeeManagerApplicationTests {
+class UserFileManagerApplicationTests {
 
 	@Test
 	@Order(1)
