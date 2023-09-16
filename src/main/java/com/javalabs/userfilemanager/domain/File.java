@@ -12,7 +12,9 @@ import javax.persistence.PrePersist;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 /**
@@ -23,6 +25,8 @@ import lombok.ToString;
  * 
  */
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
@@ -42,10 +46,13 @@ public class File {
 	@Column(name = "last_updated")
 	private Date lastUpdated;
 	
-	public File() {}
-
 	public File(Long id) {
 		this.id = id;
+	}
+	
+	public File(Long id, String name) {
+		this.id = id;
+		this.name = name;
 	}
 	
 	@PrePersist
