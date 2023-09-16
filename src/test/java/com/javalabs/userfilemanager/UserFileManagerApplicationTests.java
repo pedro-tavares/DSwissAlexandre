@@ -1,4 +1,4 @@
-package com.javalabs.employeemanager;
+package com.javalabs.userfilemanager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

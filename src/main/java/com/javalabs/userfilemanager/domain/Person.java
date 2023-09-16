@@ -1,4 +1,4 @@
-package com.javalabs.employeemanager.domain;
+package com.javalabs.userfilemanager.domain;
 
 import java.util.Date;
 
