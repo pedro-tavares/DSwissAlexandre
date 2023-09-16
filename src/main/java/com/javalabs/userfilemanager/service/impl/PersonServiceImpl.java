@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * Person Service Implementation
- * Services implementation related to Person
+ * Service implementation related to Person
  * 
  * @author Alexandre Tavares - JavaLabs
  * @since Sep 2023

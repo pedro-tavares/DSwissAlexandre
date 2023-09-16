@@ -18,5 +18,4 @@ public interface FileService {
 	public Optional<File> retrieve(Long id);
 	public void update(File file);
 	public void delete(Long id);
-
 }

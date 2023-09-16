@@ -33,6 +33,7 @@ public class File {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
 
+    private Long userId;
 	private String name;
 	private String description;
 	@Column(name = "file_path")

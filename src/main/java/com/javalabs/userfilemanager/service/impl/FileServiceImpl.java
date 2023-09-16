@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * File Service Implementation
- * Services implementation related to File
+ * Service implementation related to File
  * 
  * @author Alexandre Tavares - JavaLabs
  * @since Sep 2023
