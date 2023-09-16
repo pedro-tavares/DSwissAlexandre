@@ -1,4 +1,4 @@
-package com.javalabs.userfilemanager.service;
+package com.javalabs.userfilemanager.service.impl;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Base Service
- * Base class for all services
+ * Base Service Implementation
+ * Base class for all services implementations
  * 
  * @author Alexandre Tavares - JavaLabs
  * @since Sep 2023
@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Service
-public class BaseService implements ApplicationContextAware {
+public class BaseServiceImpl implements ApplicationContextAware {
 
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {	
