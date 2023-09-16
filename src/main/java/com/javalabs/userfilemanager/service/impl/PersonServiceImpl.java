@@ -5,7 +5,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.javalabs.userfilemanager.domain.File;
 import com.javalabs.userfilemanager.domain.Person;
 import com.javalabs.userfilemanager.repository.PersonRepository;
 import com.javalabs.userfilemanager.service.PersonService;

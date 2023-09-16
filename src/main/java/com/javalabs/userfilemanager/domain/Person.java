@@ -40,4 +40,9 @@ public class Person {
 	private String email;
 	@Column(name = "date_of_birth")
 	private Date dateOfBirth;
+	
+	public Person(Long id) {
+		this.id = id;
+	}
+	
 }
