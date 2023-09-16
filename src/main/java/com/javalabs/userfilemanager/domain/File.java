@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -40,4 +41,15 @@ public class File {
 	private String filePath;
 	@Column(name = "last_updated")
 	private Date lastUpdated;
+	
+	public File() {}
+
+	public File(Long id) {
+		this.id = id;
+	}
+	
+	@PrePersist
+    private void prePersistFunction(){
+		this.lastUpdated = new Date(System.currentTimeMillis());
+	}
 }
