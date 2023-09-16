@@ -50,11 +50,6 @@ public class File {
 		this.id = id;
 	}
 	
-	public File(Long id, String name) {
-		this.id = id;
-		this.name = name;
-	}
-	
 	@PrePersist
     private void prePersistFunction(){
 		this.lastUpdated = new Date(System.currentTimeMillis());

@@ -37,7 +37,6 @@ public class FileServiceTests {
 		fileRepository.save(file);
 
 		Optional<File> findFile = fileRepository.findById(1L);
-		assertNotNull(findFile);
 		if (findFile.isEmpty()) {
 			fail("File doesnt exist.");
 		}
