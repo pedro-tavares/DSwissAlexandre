@@ -1,7 +1,7 @@
 # dswiss-user-file-manager
 #
 # by Alexandre Tavares - JavaLabs
-# Sepetember 2023
+# September 2023
 #
 ## Java OpenJDK 11
 ## Spring Boot 2.7.7

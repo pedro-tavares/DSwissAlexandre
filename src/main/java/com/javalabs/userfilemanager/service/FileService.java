@@ -1,5 +1,9 @@
 package com.javalabs.userfilemanager.service;
 
+import java.util.Optional;
+
+import com.javalabs.userfilemanager.domain.File;
+
 /**
  * File Service Interface
  * Services related to File
@@ -9,5 +13,10 @@ package com.javalabs.userfilemanager.service;
  * 
  */
 public interface FileService {
+	
+	public void add(File file);
+	public Optional<File> retrieve(Long id);
+	public void update(File file);
+	public void delete(Long id);
 
 }
