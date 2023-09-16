@@ -32,7 +32,7 @@ public class FileServiceTests {
 	
 	@Test
 	@Order(1)
-	public void add() {
+	public void addAndRetrieve() {
 		File file = new File(1L);
 		fileRepository.save(file);
 
@@ -44,7 +44,7 @@ public class FileServiceTests {
 
 	@Test
 	@Order(2)
-	public void retrieveAfterDelete(/*Long id*/) {
+	public void retrieveAfterDelete() {
 		File file = new File(1L);
 		fileRepository.save(file);
 
