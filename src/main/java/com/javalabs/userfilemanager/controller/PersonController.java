@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.javalabs.userfilemanager.domain.Person;
-import com.javalabs.userfilemanager.service.PersonService;
 import com.javalabs.userfilemanager.exception.PersonAuthenticationException;
 import com.javalabs.userfilemanager.exception.PersonEmailCannotBeNullException;
 import com.javalabs.userfilemanager.exception.PersonExistsException;
 import com.javalabs.userfilemanager.security.JWTTokenUtil;
+import com.javalabs.userfilemanager.service.PersonService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -64,7 +64,7 @@ public class PersonController extends BaseController {
 
         	response = ResponseEntity.ok("DSwiss User Account Register: OK");
         	
-		} catch (PersonEmailCannotBeNullException | PersonExistsException e) {
+		} catch (/*PersonEmailCannotBeNullException | PersonExistsException*/ Exception e) {
 			response = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		} 
         return response;
@@ -84,7 +84,6 @@ public class PersonController extends BaseController {
 			if (personService.login(person) != null) {
 				final String token = jwtTokenUtil.generateToken(person);	
 				response = ResponseEntity.ok(token);	
-				//new ResponseEntity<String>(token, HttpStatus.OK);
 			} 
 			
 		} catch (PersonAuthenticationException e) {
