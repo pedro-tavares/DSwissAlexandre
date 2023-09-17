@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.javalabs.userfilemanager.domain.Person;
+import com.javalabs.userfilemanager.exception.PersonAuthenticationException;
 import com.javalabs.userfilemanager.repository.PersonRepository;
 import com.javalabs.userfilemanager.service.PersonService;
 
@@ -33,13 +34,19 @@ public class PersonServiceImpl extends BaseServiceImpl implements PersonService 
 	}
 
 	@Override
+	public Person login(Person person) throws PersonAuthenticationException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
 	public Optional<Person> retrieve(Long id) {
 		return personRepository.findById(id);
 	}
 
 	@Override
-	public void update(Person person) {
-		personRepository.save(person);		
+	public Person update(Person person) {
+		return personRepository.save(person);		
 	}
 
 	@Override
