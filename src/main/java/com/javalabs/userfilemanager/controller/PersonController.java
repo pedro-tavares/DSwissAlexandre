@@ -1,6 +1,7 @@
 package com.javalabs.userfilemanager.controller;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,21 +31,21 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequestMapping("/person")
-public class PersonController extends BaseController {
+public class PersonController /*extends BaseController*/ {
 	
 	@Autowired
 	private JWTTokenUtil jwtTokenUtil;
 	
 	@Autowired
 	PersonService personService;
-
+	
 	/**
 	 * Get all 
 	 * 
 	 */
     @GetMapping("/list")
     public ResponseEntity<List<Person>> list() {
-    	log.info("list");    	
+		log.info("list");    	
     	return new ResponseEntity<List<Person>>((List<Person>) personService.findAll(), HttpStatus.OK);
     }
 
@@ -57,14 +58,14 @@ public class PersonController extends BaseController {
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody Person person) {
     	log.info("register:{}", person.getEmail());
-    	
+ 	
     	ResponseEntity<String> response = null;
         try {	
         	personService.register(person);
 
         	response = ResponseEntity.ok("DSwiss User Account Register: OK");
         	
-		} catch (/*PersonEmailCannotBeNullException | PersonExistsException*/ Exception e) {
+		} catch (PersonEmailCannotBeNullException | PersonExistsException | Exception e) {
 			response = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		} 
         return response;

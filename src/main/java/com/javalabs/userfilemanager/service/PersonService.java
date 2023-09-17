@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import com.javalabs.userfilemanager.domain.Person;
 import com.javalabs.userfilemanager.exception.PersonAuthenticationException;
+import com.javalabs.userfilemanager.exception.PersonEmailCannotBeNullException;
+import com.javalabs.userfilemanager.exception.PersonExistsException;
 
 /**
  * Person Service Interface
@@ -16,10 +18,12 @@ import com.javalabs.userfilemanager.exception.PersonAuthenticationException;
  */
 public interface PersonService {
 
-	void register(Person person);
+	Person register(Person person) throws PersonEmailCannotBeNullException, PersonExistsException;
 	Person login(Person person) throws PersonAuthenticationException;
 	Optional<Person> retrieve(Long id);
 	Person update(Person person);
 	void delete(Long id);
+	Optional<Person> findById(Long id);
+	Person findByEmail(String email);
 	List<Person> findAll();
 }

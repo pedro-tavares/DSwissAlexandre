@@ -66,24 +66,19 @@ public class Person implements UserDetails {
 		this.id = id;
 	}
 
-	public String getEmail() {
-		return email;
-	}
+    public boolean isNew() {
+    	return this.id == null;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
+    public boolean hasPassword() {
+    	return (this.password != null && (!this.password.isBlank() || !password.isEmpty()));
+    }
+    
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<GrantedAuthority> roles = new ArrayList<>();
         roles.add(new SimpleGrantedAuthority(this.roles.toString()));
         return roles;	
-	}
-
-	@Override
-	public String getPassword() {
-		return this.password;
 	}
 
 	@Override
@@ -110,5 +105,20 @@ public class Person implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-	
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}	
 }
