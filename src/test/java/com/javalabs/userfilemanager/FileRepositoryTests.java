@@ -15,7 +15,7 @@ import com.javalabs.userfilemanager.repository.FileRepository;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * File Service Tests
+ * File Repository Tests
  * 
  * @author Alexandre Tavares - JavaLabs
  * @since Sep 2023
@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @SpringBootTest
-public class FileServiceTests {
+public class FileRepositoryTests {
 
 	@Autowired
 	FileRepository fileRepository;

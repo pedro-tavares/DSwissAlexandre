@@ -15,7 +15,7 @@ import com.javalabs.userfilemanager.repository.PersonRepository;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Person Service Tests
+ * Person Repository Tests
  * 
  * @author Alexandre Tavares - JavaLabs
  * @since Sep 2023
@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @SpringBootTest
-public class PersonServiceTests {
+public class PersonRepositoryTests {
 
 	@Autowired
 	PersonRepository personRepository;
