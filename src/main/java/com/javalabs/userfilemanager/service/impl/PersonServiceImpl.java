@@ -1,5 +1,6 @@
 package com.javalabs.userfilemanager.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class PersonServiceImpl extends BaseServiceImpl implements PersonService 
 	PersonRepository personRepository;
 	
 	@Override
-	public void add(Person person) {
+	public void register(Person person) {
 		personRepository.save(person);		
 	}
 
@@ -47,6 +48,11 @@ public class PersonServiceImpl extends BaseServiceImpl implements PersonService 
 		if (foundPerson.isPresent()) {
 			personRepository.delete(foundPerson.get());
 		}	
+	}
+
+	@Override
+	public List<Person> findAll() {
+		return personRepository.findAll();
 	}
 
 }
