@@ -13,6 +13,10 @@ mvn clean install
 # to build skip tests
 mvn clean install -DskipTests=true
 #
-# to build and run
+# to run
 mvn spring-boot:run
+#
+# Postman tests
+src/test/resources
+
 
