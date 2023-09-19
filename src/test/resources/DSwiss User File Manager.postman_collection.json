@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"firstName\": \"El\",\r\n    \"lastName\": \"Saltamontes\",\r\n    \"username\": \"user1\",\r\n    \"email\": \"user@mail\",\r\n    \"password\": \"password\"\r\n}",
+					"raw": "{\r\n    \"username\": \"username\",\r\n    \"name\": \"name\",\r\n    \"email\": \"email\",\r\n    \"date_of_birth\": \"\",\r\n    \"password\": \"password\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -50,7 +50,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/person/sign_up",
+					"raw": "http://localhost:8081/person/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -58,7 +58,7 @@
 					"port": "8081",
 					"path": [
 						"person",
-						"sign_up"
+						"login"
 					]
 				}
 			},
@@ -70,7 +70,36 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8081/person/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"person",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "File list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/person/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"person",
+						"list"
+					]
 				}
 			},
 			"response": []
