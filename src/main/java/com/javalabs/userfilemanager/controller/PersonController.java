@@ -49,6 +49,10 @@ public class PersonController /*extends BaseController*/ {
     	return new ResponseEntity<List<Person>>((List<Person>) personService.findAll(), HttpStatus.OK);
     }
 
+	/**
+	 * Get by id 
+	 * 
+	 */    
     @GetMapping("/{id}")
     ResponseEntity<Person> personById(@PathVariable Long id) {
     	log.info("personById {}", id); 
