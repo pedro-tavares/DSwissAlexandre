@@ -1,12 +1,12 @@
 package com.javalabs.userfilemanager.controller;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,6 +49,12 @@ public class PersonController /*extends BaseController*/ {
     	return new ResponseEntity<List<Person>>((List<Person>) personService.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    ResponseEntity<Person> personById(@PathVariable Long id) {
+    	log.info("personById {}", id); 
+    	return new ResponseEntity(personService.findById(id), HttpStatus.OK);
+    }
+    
     /**
      * Person Register
      * 

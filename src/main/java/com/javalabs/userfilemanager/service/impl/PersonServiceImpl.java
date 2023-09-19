@@ -30,7 +30,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Service
-public class PersonServiceImpl extends BaseServiceImpl implements PersonService  {
+public class PersonServiceImpl /*extends BaseServiceImpl*/ implements PersonService  {
 
 	@Autowired
 	PersonRepository personRepository;
@@ -70,12 +70,13 @@ public class PersonServiceImpl extends BaseServiceImpl implements PersonService 
 		log.info("login:{}", person.getEmail());
 
 		Person registeredPerson = findByEmail(person.getEmail());
-		log.info("login registeredPerson:{}", registeredPerson.toString());
-
 		if (registeredPerson != null) {
+			
+			log.info("login registeredPerson:{}", registeredPerson.toString());
+			
         	if (this.encoder().matches(person.getPassword(), registeredPerson.getPassword())) {
         		log.info("AUTHENTICATED:{}", person.getEmail());
-        		
+
         		return registeredPerson;
         	}
         } 
