@@ -1,6 +1,5 @@
 package com.javalabs.userfilemanager.service.impl;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,6 +14,7 @@ import com.javalabs.userfilemanager.domain.Person;
 import com.javalabs.userfilemanager.exception.PersonAuthenticationException;
 import com.javalabs.userfilemanager.exception.PersonEmailCannotBeNullException;
 import com.javalabs.userfilemanager.exception.PersonExistsException;
+import com.javalabs.userfilemanager.repository.FileRepository;
 import com.javalabs.userfilemanager.repository.PersonRepository;
 import com.javalabs.userfilemanager.security.SecurityConstants;
 import com.javalabs.userfilemanager.service.PersonService;
@@ -35,6 +35,9 @@ public class PersonServiceImpl /*extends BaseServiceImpl*/ implements PersonServ
 
 	@Autowired
 	PersonRepository personRepository;
+	
+	@Autowired
+	FileRepository fileRepository;
 	
 	//TODO
 	/* 
@@ -129,8 +132,7 @@ public class PersonServiceImpl /*extends BaseServiceImpl*/ implements PersonServ
 	}
 
 	@Override
-	public List<File> findFilesByPerson(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<File> findFilesByPerson(Long personId) {
+		return fileRepository.findByPerson(personId);
 	}	
 }
