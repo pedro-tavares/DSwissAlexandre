@@ -50,12 +50,22 @@ public class PersonController /*extends BaseController*/ {
     }
 
 	/**
-	 * Get by id 
+	 * Get by Person id 
 	 * 
 	 */    
     @GetMapping("/{id}")
     ResponseEntity<Person> personById(@PathVariable Long id) {
     	log.info("personById {}", id); 
+    	return new ResponseEntity(personService.findById(id), HttpStatus.OK);
+    }
+
+	/**
+	 * Get Files by Person id 
+	 * 
+	 */    
+    @GetMapping("/{id}/files")
+    ResponseEntity<Person> filesByPersonId(@PathVariable Long id) {
+    	log.info("filesByPersonId {}", id); 
     	return new ResponseEntity(personService.findById(id), HttpStatus.OK);
     }
     

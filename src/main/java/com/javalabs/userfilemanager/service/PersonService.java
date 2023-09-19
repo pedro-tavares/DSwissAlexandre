@@ -3,6 +3,7 @@ package com.javalabs.userfilemanager.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.javalabs.userfilemanager.domain.File;
 import com.javalabs.userfilemanager.domain.Person;
 import com.javalabs.userfilemanager.exception.PersonAuthenticationException;
 import com.javalabs.userfilemanager.exception.PersonEmailCannotBeNullException;
@@ -26,4 +27,5 @@ public interface PersonService {
 	Optional<Person> findById(Long id);
 	Person findByEmail(String email);
 	List<Person> findAll();
+	List<File> findFilesByPerson(Long id);
 }

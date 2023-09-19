@@ -10,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.javalabs.userfilemanager.domain.File;
 import com.javalabs.userfilemanager.domain.Person;
 import com.javalabs.userfilemanager.exception.PersonAuthenticationException;
 import com.javalabs.userfilemanager.exception.PersonEmailCannotBeNullException;
@@ -125,5 +126,11 @@ public class PersonServiceImpl /*extends BaseServiceImpl*/ implements PersonServ
 
 	private boolean emailExists(final String email) {
 		return personRepository.findByEmail(email) != null;
+	}
+
+	@Override
+	public List<File> findFilesByPerson(Long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}	
 }
