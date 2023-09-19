@@ -10,6 +10,8 @@
 #
 # to build
 mvn clean install
+# to build skip tests
+mvn clean install -DskipTests=true
 #
 # to build and run
 mvn spring-boot:run
