@@ -51,8 +51,8 @@ public class FileController extends BaseController {
 	 * 
 	 */       
     @GetMapping("/{id}")
-    ResponseEntity<File> personById(@PathVariable Long id) {
-    	log.info("personById {}", id); 
+    ResponseEntity<File> fileById(@PathVariable Long id) {
+    	log.info("fileById {}", id); 
     	return new ResponseEntity(fileService.findById(id), HttpStatus.OK);
     }
 
