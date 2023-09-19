@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "b35ce668-07f1-4fd7-960e-ae58eda22180",
+		"name": "DSwiss User File Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14762599"
+	},
+	"item": [
+		{
+			"name": "Person register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"username\",\r\n    \"name\": \"name\",\r\n    \"email\": \"email\",\r\n    \"date_of_birth\": \"\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/person/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"person",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Person login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"El\",\r\n    \"lastName\": \"Saltamontes\",\r\n    \"username\": \"user1\",\r\n    \"email\": \"user@mail\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/person/sign_up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"person",
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Person list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
