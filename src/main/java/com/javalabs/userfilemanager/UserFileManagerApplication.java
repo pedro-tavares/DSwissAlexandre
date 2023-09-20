@@ -20,8 +20,8 @@ import lombok.extern.slf4j.Slf4j;
 @SpringBootApplication
 public class UserFileManagerApplication {
 	
-	public static void main(String[] args) throws SecurityException, FileNotFoundException, IOException {
-		log.info("JavaLabs - User and File Manager - v0.0.1");
+	public static void main(String[] args) {
+		log.info("DSwiss and JavaLabs- User and File Manager - v0.0.1");
 		log.info("user.home @ {}", System.getProperty("user.home"));
 		log.info("user.dir @ {}", System.getProperty("user.dir"));
 		

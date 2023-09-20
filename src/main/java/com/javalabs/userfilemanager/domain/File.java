@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 
 import lombok.AllArgsConstructor;
@@ -25,8 +28,6 @@ import lombok.ToString;
  * 
  */
 @Data
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
@@ -35,10 +36,18 @@ import lombok.ToString;
 public class File {
 	
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     protected Long id;
 
-    private Long userId;
+    /*
+    @ManyToOne
+    @JoinTable(
+    	name = "files_person", 
+    	joinColumns = @JoinColumn(name = "file_id", referencedColumnName = "id"), 
+    	inverseJoinColumns = @JoinColumn(name = "person_id", referencedColumnName = "id")
+    ) 
+    */   
+    private Long personId;
 	private String name;
 	private String description;
 	@Column(name = "file_path")

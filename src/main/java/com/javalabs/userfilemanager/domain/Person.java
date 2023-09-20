@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -44,7 +45,7 @@ public class Person implements UserDetails {
     private static final long serialVersionUID = 1L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     protected Long id;
 
 	private String username;
@@ -55,12 +56,16 @@ public class Person implements UserDetails {
 	private String password;
     @ManyToMany 
     @JoinTable( 
-    	name = "persons_roles", 
-        joinColumns = @JoinColumn(
-        name = "person_id", referencedColumnName = "id"), 
-        inverseJoinColumns = @JoinColumn(
-        name = "role_id", referencedColumnName = "id")) 
+    	name = "person_roles", 
+    	joinColumns = @JoinColumn( name = "person_id", referencedColumnName = "id"), 
+        inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")) 
     private Collection<Role> roles;
+    @OneToMany 
+    @JoinTable( 
+    	name = "person_files",  
+    	joinColumns = @JoinColumn(name = "person_id", referencedColumnName = "id"), 
+        inverseJoinColumns = @JoinColumn(name = "file_id", referencedColumnName = "id")) 
+    private Collection<File> files;
     
 	public Person(Long id) {
 		this.id = id;

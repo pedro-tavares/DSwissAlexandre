@@ -31,7 +31,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequestMapping("/person")
-public class PersonController /*extends BaseController*/ {
+public class PersonController extends BaseController {
 	
 	@Autowired
 	private JWTTokenUtil jwtTokenUtil;

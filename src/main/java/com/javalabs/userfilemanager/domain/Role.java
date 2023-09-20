@@ -36,7 +36,7 @@ public class Role {
 	private static final long serialVersionUID = 5570852700686895664L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 	private String name;
     @ManyToMany(mappedBy = "roles")
